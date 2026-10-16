@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAFAFA">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <!-- Icone -->
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/icone"
+            android:layout_marginEnd="8dp"
+            android:contentDescription="Icône" />
+        <!-- Titre -->
+        <TextView
+            android:id="@+id/titre"
+            android:text="Application de Facturation"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#3F51B5"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Bloc principal dans une CardView -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            card_view:cardElevation="6dp"
+            card_view:cardCornerRadius="12dp"
+            card_view:cardBackgroundColor="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Saisie Libellé -->
+                <EditText
+                    android:id="@+id/editLibelle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Libellé de l'article"
+                    android:backgroundTint="#3F51B5"
+                    android:minHeight="48dp"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- Saisie Prix HT -->
+                <EditText
+                    android:id="@+id/editPrixHT"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Prix HT"
+                    android:inputType="numberDecimal"
+                    android:backgroundTint="#3F51B5"
+                    android:minHeight="48dp"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- Spinner TVA -->
+                <Spinner
+                    android:id="@+id/spinnerTVA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- Prix TTC -->
+                <TextView
+                    android:id="@+id/textPrixTTC"
+                    android:text="Prix TTC : "
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- TableLayout -->
+        <TextView
+            android:text="Articles ajoutés :"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"
+            android:textColor="#3F51B5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TableLayout
+            android:id="@+id/tableArticles"
+            android:stretchColumns="*"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#EEEEEE"
+            android:padding="4dp"
+            android:layout_marginBottom="16dp">
+
+            <TableRow>
+                <TextView android:text="Libellé" android:textStyle="bold" />
+                <TextView android:text="Prix HT" android:textStyle="bold" />
+                <TextView android:text="Prix TTC" android:textStyle="bold" />
+            </TableRow>
+        </TableLayout>
+
+        <!-- Total TTC -->
+        <TextView
+            android:id="@+id/textTotalTTC"
+            android:text="Total TTC : "
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:layout_marginBottom="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- Boutons -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btnAjouter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="Ajouter"
+                android:backgroundTint="#4CAF50"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/btnEnregistrer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="Enregistrer"
+                android:backgroundTint="#2196F3"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/btnAnnuler"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Annuler"
+                android:backgroundTint="#F44336"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/signature"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Développé par AMEZIAN Aziz"
+            android:gravity="center"
+            android:textColor="#555555"
+            android:textSize="14sp"
+            android:typeface="serif"
+            android:textStyle="italic"
+            android:layout_marginTop="32dp"
+            android:padding="8dp" />
+    </LinearLayout>
+</ScrollView>
